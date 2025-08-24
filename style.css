@@ -1,0 +1,643 @@
+:root {
+  --bg-dark: #0e0e10;
+  --bg-mid: #17171a;
+  --accent: #ff4c60;
+  --gold: #ffd44d;
+  --text: #f5f6f7;
+  --muted: #b8bec7;
+  --silver-white: #fdfdfd;
+  --gold-yellow: #ffd44d;
+  --platinum-black: #1a1a1a;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-shadow: 0 0 4px rgba(0,0,0,0.45);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.wrap {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.section {
+  position: relative;
+  padding: 96px 0;
+  scroll-margin-top: 84px;
+}
+.section .bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: none;
+  opacity: 1;
+  z-index: 0;
+}
+/* Remove overlay behind text */
+.section.has-bg::before {
+  content: none !important;
+}
+
+/* Ensure no backgrounds behind text elements */
+.section > .wrap > * {
+  background: transparent !important;
+}
+
+.section > .wrap {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(140%) blur(8px);
+  background: rgba(10,10,12,0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background-color 0.3s ease;
+}
+.site-header:hover {
+  background: rgba(10,10,12,1);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
+  color: #fff;
+  user-select: none;
+}
+.brand span {
+  color: var(--accent);
+}
+.brand-logo {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 6px;
+  color: var(--accent);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.main-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 22px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  user-select: none;
+}
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  outline-offset: 3px;
+  outline: 2px solid var(--accent);
+  transition: all 0.2s ease;
+}
+
+/* Hero */
+.hero .bg {
+  background-image:
+    radial-gradient(60rem 30rem at 10% 20%, rgba(255,76,96,0.18), transparent 60%),
+    radial-gradient(60rem 30rem at 90% 10%, rgba(255,212,77,0.18), transparent 60%),
+    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop");
+}
+.hero-inner {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 70vh;
+  position: relative;
+}
+.hero-title {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text);
+  user-select: none;
+}
+.hero-title span {
+  color: var(--accent);
+}
+.hero-sub {
+  margin-top: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 1.2rem;
+  max-width: 450px;
+}
+
+/* Floating supplements inside diet section */
+.diet-wrapper {
+  max-width: 960px;
+  margin-inline: auto;
+  text-align: center;
+}
+.diet-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.floating-supplements {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+.float {
+  position: relative;
+  animation: drift 8s ease-in-out infinite alternate;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+  transition: filter 0.3s ease;
+}
+.float:focus-visible,
+.float:hover {
+  animation-play-state: paused;
+  filter: drop-shadow(0 10px 25px rgba(255,76,96,0.6));
+  outline: none;
+}
+.float img {
+  width: 90px;
+  opacity: 0.28;
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+  border-radius: 12px;
+  user-select: none;
+}
+.float .bubble {
+  position: absolute;
+  inset: auto auto -10px 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(0,0,0,0.75);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.float .tip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -44px;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.75);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  user-select: none;
+}
+.float:hover img,
+.float:focus-visible img {
+  opacity: 0.95;
+  transform: scale(1.15) translateY(-4px);
+}
+.float:hover .tip,
+.float:focus-visible .tip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+.float:hover .bubble,
+.float:focus-visible .bubble {
+  opacity: 1;
+}
+
+@keyframes drift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+/* Bowl container */
+.bowl-container {
+  position: relative;
+  z-index: 1;
+  max-width: 380px;
+  width: 100%;
+}
+.bowl {
+  width: 100%;
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.45));
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.bowl-container:hover .bowl,
+.bowl-container:focus-within .bowl {
+  transform: scale(1.05);
+}
+.macros {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.15);
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+}
+.macros li {
+  list-style: none;
+  background: rgba(0,0,0,0.72);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 18px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.6s ease;
+}
+.macros .m1 { transform: translate(-150px, -110px); }
+.macros .m2 { transform: translate(0, -150px); }
+.macros .m3 { transform: translate(150px, -110px); }
+.bowl-container:hover .macros li,
+.bowl-container:focus-within .macros li {
+  opacity: 1;
+}
+.bowl-container:hover .macros .m1,
+.bowl-container:focus-within .macros .m1 {
+  transform: translate(-170px, -130px);
+}
+.bowl-container:hover .macros .m2,
+.bowl-container:focus-within .macros .m2 {
+  transform: translate(0, -180px);
+}
+.bowl-container:hover .macros .m3,
+.bowl-container:focus-within .macros .m3 {
+  transform: translate(170px, -130px);
+}
+
+/* Membership */
+.membership .bg {
+  background-image:
+    radial-gradient(40rem 18rem at 20% 10%, rgba(255,76,96,0.16), transparent 60%),
+    url("https://images.unsplash.com/photo-1579758629934-03608ccdbaba?q=80&w=1800&auto=format&fit=crop");
+}
+.section-title {
+  font-size: clamp(28px, 4.6vw, 42px);
+  font-weight: 800;
+  text-align: center;
+  user-select: none;
+}
+.section-title span {
+  color: var(--accent);
+}
+.section-kicker {
+  text-align: center;
+  margin: 10px auto 28px;
+  color: #d7dbe2;
+  max-width: 800px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  user-select: none;
+}
+.grid-3 {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.cards-simple .plan {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 28px 22px 30px 22px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  color: var(--text);
+  user-select: none;
+}
+.cards-simple .plan:hover,
+.cards-simple .plan:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 38px rgba(0,0,0,0.35);
+  border-color: rgba(255,255,255,0.18);
+  outline: none;
+}
+.cards-simple .plan h3 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: var(--accent);
+}
+.cards-simple .plan ul {
+  list-style: none;
+  color: #e6e9ee;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.cards-simple .plan ul li {
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.cards-simple .plan ul li:last-child {
+  border-bottom: 0;
+}
+.cards-simple .plan .price {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--gold);
+  text-align: center;
+}
+.cards-simple .plan.hot {
+  outline: 3px solid var(--accent);
+  box-shadow: 0 0 20px var(--accent);
+}
+.cards-simple .plan .badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.8rem;
+  color: #111;
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  user-select: none;
+}
+
+/* NFC Cards */
+.nfc .bg {
+  background-image:
+    radial-gradient(40rem 18rem at 80% 0%, rgba(255,212,77,0.16), transparent 60%),
+    url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1800&auto=format&fit=crop");
+}
+.nfc-grid {
+  margin-top: 22px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 36px;
+}
+.nfc-card {
+  width: 300px;
+  height: 190px;
+  margin-inline: auto;
+  perspective: 1200px;
+  cursor: pointer;
+  outline-offset: 3px;
+  border-radius: 16px;
+  user-select: none;
+}
+.nfc-card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.nfc-card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2,0.7,0.2,1);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+  border: 1px solid transparent;
+}
+.nfc-card:hover .card-inner,
+.nfc-card:focus-within .card-inner {
+  transform: rotateY(180deg);
+}
+.nfc-card .face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  backface-visibility: hidden;
+  color: inherit;
+}
+.nfc-card .front .brand-logo {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+.nfc-card .front .brand-mini {
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
+}
+.nfc-card .front .name {
+  margin-top: auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-variant: small-caps;
+}
+.nfc-card .front .row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #e9ecf2;
+  font-weight: 600;
+}
+.nfc-card .front .chip {
+  width: 38px;
+  height: 26px;
+  border-radius: 6px;
+  background:
+    linear-gradient(135deg, #fffb, #9999);
+  box-shadow: inset 0 0 0 2px #0006, 0 2px 6px #0006;
+  align-self: flex-end;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
+}
+
+/* Card colors */
+.nfc-card.silver .front {
+  background: linear-gradient(135deg, #fefefe, #f0f0f0);
+  color: #111;
+  border: 1.5px solid #ccc;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+.nfc-card.gold .front {
+  background: linear-gradient(135deg, #ffd54f, #c9a800);
+  color: #3b2e00;
+  border: 1.5px solid #aa8800;
+  box-shadow: 0 8px 25px #ffdb59cc;
+}
+.nfc-card.platinum .front {
+  background: linear-gradient(135deg, #1c1c1c, #000000);
+  color: #f1f1f1;
+  border: 1.5px solid #333;
+  box-shadow: 0 8px 25px #000000cc;
+}
+
+/* Back */
+.nfc-card .back {
+  transform: rotateY(180deg);
+  background: #0f1113;
+  color: #dfe5ee;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.nfc-card .back .stripe {
+  width: 100%;
+  height: 34px;
+  background: linear-gradient(90deg, #2a2a2a, #0b0b0b);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  box-shadow: inset 0 1px 2px #444;
+}
+.nfc-card .back .tier {
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  color: var(--gold);
+  margin: 6px 0 12px 0;
+  font-size: 1.1rem;
+}
+.nfc-card .back p {
+  margin: 4px 0;
+}
+.nfc-card .back .note {
+  font-size: 0.8rem;
+  color: #c9d1db;
+  opacity: 0.9;
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* Our Clients */
+.clients .bg {
+  background-image:
+    radial-gradient(40rem 18rem at 50% 50%, rgba(255,76,96,0.1), transparent 60%);
+}
+.clients-list {
+  max-width: 600px;
+  margin: 0 auto;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 14px 28px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  user-select: none;
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(255,76,96,0.4);
+}
+
+/* Payment section */
+.payment {
+  background: var(--bg-mid);
+  border-radius: 16px;
+  padding: 48px 0;
+  text-align: center;
+}
+.payment-grid {
+  max-width: 400px;
+  margin: 24px auto 0;
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+.payment-method img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.3);
+}
+.payment-method p {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.payment-method:hover,
+.payment-method:focus-visible {
+  transform: scale(1.05);
+  outline: none;
+  filter: drop-shadow(0 0 12px var(--gold));
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  padding: 28px 0;
+  text-align: center;
+  color: #cfd5df;
+  font-weight: 600;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .main-nav a {
+    margin-left: 14px;
+    font-size: 0.95rem;
+  }
+  .float img {
+    width: 72px;
+  }
+  .nfc-card {
+    width: 280px;
+    height: 180px;
+  }
+  .nfc-card:hover .card-inner,
+  .nfc-card:focus-within .card-inner {
+    transform: none;
+  }
+  .payment-grid {
+    gap: 32px;
+  }
+  .diet-content {
+    flex-direction: column;
+  }
+  .floating-supplements {
+    justify-content: center;
+  }
+}

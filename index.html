@@ -1,0 +1,280 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-GYM Nepal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="vertical-align: middle; margin-right: 8px;">
+          <path d="M2 12h2v2H2v-2zm18 0h2v2h-2v-2zM6 7h2v6H6V7zm10 0h2v6h-2V7zM4 11h16v2H4v-2z" fill="currentColor"/>
+        </svg>
+        E<span>-GYM</span>
+      </div>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#hero">Home</a>
+        <a href="#membership">Membership</a>
+        <a href="#cards">NFC Cards</a>
+        <a href="#diet">Diet</a>
+        <a href="#clients">Our Clients</a>
+        <a href="#payment">Payment</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="section hero has-bg" aria-label="Hero Section">
+    <div class="bg"></div>
+    <div class="wrap hero-inner">
+      <h1 class="hero-title">Welcome to <span>E-GYM Nepal</span></h1>
+      <p class="hero-sub">One pass. Many gyms across Nepal. 20% off supplements. Premium NFC access.</p>
+    </div>
+  </section>
+
+  <section id="membership" class="section has-bg membership" aria-label="Membership Plans">
+    <div class="bg"></div>
+    <div class="wrap">
+      <h2 class="section-title">Choose Your <span>Membership</span></h2>
+      <p class="section-kicker">
+        All plans include <strong>30 gym credits</strong>, premium NFC card access to partner gyms, and personalized diet plans.
+      </p>
+
+      <div class="grid-3 cards-simple" role="list">
+        <article class="plan" role="listitem" aria-labelledby="silver-title">
+          <h3 id="silver-title">Silver Package</h3>
+          <ul>
+            <li>30 Gym Credits</li>
+            <li>5 Buffer Days</li>
+            <li>Diet Plan</li>
+            <li>Gym Trainer Support</li>
+            <li>Basic Gym Needs</li>
+          </ul>
+          <div class="price">NRs 2,499</div>
+        </article>
+
+        <article class="plan hot" role="listitem" aria-labelledby="gold-title">
+          <div class="badge">Best Value</div>
+          <h3 id="gold-title">Gold Package</h3>
+          <ul>
+            <li>30 Gym Credits</li>
+            <li>10 Buffer Days</li>
+            <li>Diet Plan</li>
+            <li>Gym Trainer Support</li>
+            <li>2x Daily Access to Swim & Sauna</li>
+            <li>All Basic Amenities</li>
+          </ul>
+          <div class="price">NRs 4,499</div>
+        </article>
+
+        <article class="plan" role="listitem" aria-labelledby="platinum-title">
+          <h3 id="platinum-title">Platinum Package</h3>
+          <ul>
+            <li>30 Gym Credits</li>
+            <li>15 Buffer Days</li>
+            <li>Ultimate Diet Plan</li>
+            <li>Gym Trainer Support</li>
+            <li>5 Days Swim & Sauna Access</li>
+            <li>All Basic Amenities + VIP Access</li>
+          </ul>
+          <div class="price">NRs 9,999</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cards" class="section has-bg nfc" aria-label="NFC Cards Showcase">
+    <div class="bg"></div>
+    <div class="wrap">
+      <h2 class="section-title">Premium <span>NFC Cards</span></h2>
+      <p class="section-kicker">
+        Get your name printed on a <strong>Silver (White)</strong>, <strong>Gold (Gold)</strong>, or <strong>Platinum (Matte Black)</strong> metal NFC card.
+      </p>
+
+      <div class="grid-3 nfc-grid" role="list">
+        <div class="nfc-card silver" role="listitem" tabindex="0" aria-label="Silver NFC Card, white color">
+          <div class="card-inner">
+            <div class="face front">
+              <div class="chip"></div>
+              <div class="brand-logo" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 6px;">
+                  <path d="M2 12h2v2H2v-2zm18 0h2v2h-2v-2zM6 7h2v6H6V7zm10 0h2v6h-2V7zM4 11h16v2H4v-2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="brand-mini">E-GYM</div>
+              <div class="name">Your Name</div>
+              <div class="row">
+                <span>ID</span><span>#10234</span>
+              </div>
+              <div class="row">
+                <span>Valid</span><span>12/2025</span>
+              </div>
+            </div>
+            <div class="face back">
+              <div class="stripe"></div>
+              <p class="tier">SILVER NFC ACCESS</p>
+              <p>Partner-Gym Entry</p>
+              <p>20% OFF Supplements</p>
+              <p class="note">Tap to enter collaborating gyms</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nfc-card gold" role="listitem" tabindex="0" aria-label="Gold NFC Card, gold color">
+          <div class="card-inner">
+            <div class="face front">
+              <div class="chip"></div>
+              <div class="brand-logo" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 6px;">
+                  <path d="M2 12h2v2H2v-2zm18 0h2v2h-2v-2zM6 7h2v6H6V7zm10 0h2v6h-2V7zM4 11h16v2H4v-2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="brand-mini">E-GYM</div>
+              <div class="name">Your Name</div>
+              <div class="row">
+                <span>ID</span><span>#20456</span>
+              </div>
+              <div class="row">
+                <span>Valid</span><span>12/2026</span>
+              </div>
+            </div>
+            <div class="face back">
+              <div class="stripe"></div>
+              <p class="tier">GOLD NFC ACCESS</p>
+              <p>Priority Entry</p>
+              <p>Partner-Gym Network</p>
+              <p class="note">Tap to enter collaborating gyms</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nfc-card platinum" role="listitem" tabindex="0" aria-label="Platinum NFC Card, matte black color">
+          <div class="card-inner">
+            <div class="face front">
+              <div class="chip"></div>
+              <div class="brand-logo" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 6px;">
+                  <path d="M2 12h2v2H2v-2zm18 0h2v2h-2v-2zM6 7h2v6H6V7zm10 0h2v6h-2V7zM4 11h16v2H4v-2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="brand-mini">E-GYM</div>
+              <div class="name">Your Name</div>
+              <div class="row">
+                <span>ID</span><span>#50999</span>
+              </div>
+              <div class="row">
+                <span>Valid</span><span>12/2027</span>
+              </div>
+            </div>
+            <div class="face back">
+              <div class="stripe"></div>
+              <p class="tier">PLATINUM NFC ACCESS</p>
+              <p>All-Gym + VIP Lounges</p>
+              <p>Concierge Support</p>
+              <p class="note">Tap to enter collaborating gyms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mini-hint">Hover or tap a card to flip. (Flip disabled on very small screens to avoid layout bugs.)</p>
+    </div>
+  </section>
+
+  <section id="diet" class="section has-bg diet" aria-label="Diet Plan Bowl">
+    <div class="bg"></div>
+    <div class="wrap diet-wrapper">
+      <h2 class="section-title"><span>Diet</span> Bowl</h2>
+      <p class="section-kicker">
+        Hover the bowl — macros fly out like toppings. White ceramic vibe. Eggs included 🥚
+      </p>
+
+      <div class="diet-content">
+        <div class="floating-supplements" aria-label="Supplements">
+          <div class="float creatine" data-info="Creatine: boosts ATP for strength & power. Great for short, intense sets." tabindex="0" aria-describedby="tip-creatine">
+            <img src="creatine.png" alt="Creatine supplement" />
+            <div class="bubble"></div>
+            <div class="tip" id="tip-creatine">Creatine: boosts ATP for strength & power.</div>
+          </div>
+
+          <div class="float protein" data-info="Protein: supports muscle growth & recovery. Aim 1.6–2.2g/kg bodyweight." tabindex="0" aria-describedby="tip-protein">
+            <img src="protein.png" alt="Protein supplement" />
+            <div class="bubble"></div>
+            <div class="tip" id="tip-protein">Protein: muscle growth & recovery.</div>
+          </div>
+
+          <div class="float bottle" data-info="Hydration: 2–3L/day improves performance, joint health, and focus." tabindex="0" aria-describedby="tip-bottle">
+            <img src="bottle.png" alt="Water bottle" />
+            <div class="bubble"></div>
+            <div class="tip" id="tip-bottle">Hydration: 2–3L/day.</div>
+          </div>
+        </div>
+
+        <div class="bowl-container">
+          <img src="bowl.png" alt="Diet Bowl with protein food" class="bowl" />
+          <ul class="macros" role="list" aria-label="Macronutrient breakdown">
+            <li class="m1" role="listitem">🍳 Protein: 45%</li>
+            <li class="m2" role="listitem">🍚 Carbs: 35%</li>
+            <li class="m3" role="listitem">🥑 Fats: 20%</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients" class="section has-bg clients" aria-label="Our Clients">
+    <div class="bg"></div>
+    <div class="wrap">
+      <h2 class="section-title">Our <span>Clients</span></h2>
+      <p class="section-kicker">We collaborate with the best gyms across Nepal.</p>
+
+      <ul class="clients-list" role="list">
+        <li>Everest Fitness Center</li>
+        <li>Himalaya Muscle Gym</li>
+        <li>Pokhara Powerhouse</li>
+        <li>Kathmandu Strength Hub</li>
+        <li>Chitwan Champions Gym</li>
+        <li>Biratnagar Bodyworks</li>
+        <li>Lumbini Fitness Arena</li>
+        <li>Janakpur Health Club</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="payment" class="section payment" aria-label="Payment Options">
+    <div class="wrap">
+      <h2 class="section-title">Payment <span>Options</span></h2>
+      <p class="section-kicker">Pay easily via trusted platforms.</p>
+
+      <div class="payment-grid">
+        <div class="payment-method">
+          <img src="esewa.png" alt="eSewa Payment Gateway" />
+          <p>eSewa</p>
+        </div>
+        <div class="payment-method">
+          <img src="imepay.png" alt="IME Pay Payment Gateway" />
+          <p>IME Pay</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <p>📞 +977 9869371326 · 📧 nhitger777@gmail.com</p>
+      <p>© 2025 E-GYM Nepal — All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
